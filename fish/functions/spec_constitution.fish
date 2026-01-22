@@ -1,4 +1,4 @@
-function upgrade_constitution --description "Update constitution based on stdin (file) or args (text)"
+function spec_constitution --description "Update constitution based on stdin (file) or args (text)"
     # 1. Set target file and date
     set -l target_file ".specify/memory/constitution.md"
     set -l current_date (date +%Y-%m-%d)
