@@ -16,6 +16,8 @@
 > ---
 > ⭐️ **Github 衝浪新手，你的小小 Star 可以讓我放棄晚餐，再多寫兩個小時代碼。**
 
+![Demo](.github/assets/output.gif)
+
 ## ⚡️ TL;DR
 
 **就像 spec-kit，但活在你的 Terminal 裡。**

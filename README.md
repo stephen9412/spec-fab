@@ -16,6 +16,8 @@
 > ---
 > ⭐️ **GitHub newbie here. Your Star gives me enough motivation to skip dinner and code for 2 more hours.**
 
+![Demo](.github/assets/output.gif)
+
 ## ⚡️ TL;DR
 
 **It's like spec-kit, but native to your Terminal.**
