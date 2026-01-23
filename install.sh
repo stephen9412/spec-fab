@@ -274,7 +274,7 @@ setup_fabric_interaction() {
     echo ""
 
     # --- 3. Launch ---
-    printf "👉 Ready for takeoff? Press [Enter] to start setup (or Ctrl+C to do it later)... "
+    printf "👉 Ready for takeoff? Press [Enter] to start setup... "
     read -r _dummy
 
     echo "🚀 Launching Fabric setup wizard..."
@@ -426,6 +426,19 @@ EOF
 
      # 5. setup fabric interaction
     setup_fabric_interaction
+    echo "🎯 Linking SpecFab patterns to Fabric..."
+    
+    FABRIC_CONFIG_DIR="$HOME/.config/fabric"
+    ENV_FILE="$FABRIC_CONFIG_DIR/.env"
+    
+    # Ensure directory exists
+    mkdir -p "$FABRIC_CONFIG_DIR"
+
+    # #TODO: Consider creating a master directory and using ln to link in the future
+    # For now, keep it simple and append directly to the end
+    echo "CUSTOM_PATTERNS_DIRECTORY=$HOME/.specfab/patterns" >> "$ENV_FILE"
+    
+    echo "✅ Patterns path appended to $ENV_FILE"
 
     # 6. setup user path
     setup_user_path
