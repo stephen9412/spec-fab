@@ -10,9 +10,13 @@
 <br>
 
 > **Spec 的衝突驅動架構 (Conflict-Driven Architecture)**
+>
 > 🛑 **Stop chatting. Start merging.**
 > 別再跟 AI 閒聊了，開始合併它的決策吧。
+>
 > spec-fab 將 LLM 強制整合進你的 Unix 管線，把**架構決策**當作**Git 合併衝突**，交由身為人類的你來定奪。
+>
+> ---
 > ⭐️ **Github 衝浪新手，你的小小 Star 可以讓我放棄晚餐，再多寫兩個小時代碼。**
 
 ## ⚡️ TL;DR

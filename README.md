@@ -10,9 +10,13 @@
 <br>
 
 > **Conflict-Driven Architecture for the AI Era**
+> 
 > 🛑 **Stop chatting. Start merging.**
 > Quit the casual chats with AI. It's time to merge its decisions.
+> 
 > spec-fab forces LLM integration directly into your Unix pipeline, treating **architectural decisions** as **Git merge conflicts**—requiring you, the human, to resolve them.
+> 
+> ---
 > ⭐️ **GitHub newbie here. Your Star gives me enough motivation to skip dinner and code for 2 more hours.**
 
 ## ⚡️ TL;DR
