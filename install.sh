@@ -60,35 +60,35 @@ install_fish() {
     fi
 
     # 2. Arch / CachyOS (pacman)
-    if command -v pacman &> /dev/null; then
-        echo "🏹 Detected pacman, installing fish..."
+    if command -v pacman >/dev/null 2>&1 && [ -f "/etc/pacman.conf" ]; then
+        echo "🏹 Detected pacman (Arch/CachyOS), installing fish..."
         sudo pacman -S --noconfirm fish
         return 0
     fi
 
     # 3. Ubuntu / Debian (apt)
-    if command -v apt-get &> /dev/null; then
+    if command -v apt-get >/dev/null 2>&1; then
         echo "🌀 Detected apt, installing fish..."
         sudo apt-get update && sudo apt-get install -y fish
         return 0
     fi
 
     # 4. Fedora / RHEL (dnf)
-    if command -v dnf &> /dev/null; then
+    if command -v dnf >/dev/null 2>&1; then
         echo "🎩 Detected dnf, installing fish..."
         sudo dnf install -y fish
         return 0
     fi
 
     # 5. Alpine (apk)
-    if command -v apk &> /dev/null; then
+    if command -v apk >/dev/null 2>&1; then
         echo "🏔️  Detected apk, installing fish..."
         sudo apk add fish
         return 0
     fi
 
     # 6. NixOS (nix)
-    if command -v nix &> /dev/null; then
+    if command -v nix >/dev/null 2>&1; then
         echo "❄️  Detected nix, installing fish..."
         nix profile add nixpkgs#fish
         return 0
