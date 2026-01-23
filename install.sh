@@ -228,10 +228,10 @@ setup_fabric_interaction() {
     # --- 1. Motivational Speech ---
     echo ""
     echo "🏁 ========================================================"
-    echo "🏁  Just One More Step: Give SpecFab Its Soul"
+    echo "🏁  Just One More Step: Give spec-fab Its Soul"
     echo "🏁 ========================================================"
     echo ""
-    echo "   The skeleton of SpecFab is installed. Now it needs a \"brain\" to think."
+    echo "   The skeleton of spec-fab is installed. Now it needs a \"brain\" to think."
     echo "   We will guide you through setting up the AI service to activate it."
     echo ""
     echo "🔑 Please have one of your API Keys ready (any one will do):"
@@ -243,7 +243,7 @@ setup_fabric_interaction() {
     # --- 1.5 Warning: Size Matters (New Section) ---
     echo ""
     echo "⚠️  CRITICAL ADVICE: DON'T USE \"TOY\" MODELS"
-    echo "   SpecFab performs complex reasoning tasks. Using small/local models"
+    echo "   spec-fab performs complex reasoning tasks. Using small/local models"
     echo "   (like 2B, 7B, or 8B parameters) will likely result in failure."
     echo ""
     echo "   🚫 Please DO NOT open GitHub Issues if you are using a < 70B model."
@@ -314,7 +314,7 @@ setup_user_path() {
             echo "✅ Great! $BIN_DIR is already in your PATH."
             ;;
         *)
-            echo "⚠️  Your system doesn't know where SpecFab is yet."
+            echo "⚠️  Your system doesn't know where spec-fab is yet."
             
             if [ -n "$SHELL_RC" ] && [ -f "$SHELL_RC" ]; then
                 echo "   I can verify and append this to your $SHELL_RC:"
@@ -325,7 +325,7 @@ setup_user_path() {
                 case "$response" in
                     [yY]|[yY][eE][sS]) 
                         echo "" >> "$SHELL_RC"
-                        echo "# Added by SpecFab Installer" >> "$SHELL_RC"
+                        echo "# Added by spec-fab Installer" >> "$SHELL_RC"
                         echo "export PATH=\"$BIN_DIR:\$PATH\"" >> "$SHELL_RC"
                         echo "✅ Added to $SHELL_RC. Please restart your terminal."
                         ;;
@@ -342,7 +342,7 @@ setup_user_path() {
 }
 
 main() {
-    echo "🔮 Starting SpecFab Installation..."
+    echo "🔮 Starting spec-fab Installation..."
     root_warning
 
     RAW_OS=$(uname -s)
@@ -389,7 +389,7 @@ main() {
     # 2. clone git repo
     SPEC_FAB_DIR="$HOME/.specfab"
     if [ -d "$SPEC_FAB_DIR/.git" ]; then
-        echo "Updating SpecFab..."
+        echo "Updating spec-fab..."
         cd "$SPEC_FAB_DIR" && git pull
     else
         git clone https://github.com/stephen9412/spec-fab.git "$SPEC_FAB_DIR"
@@ -400,10 +400,10 @@ main() {
 
     # 4. Create Fish startup hook (injection mode)
     SPEC_FAB_BOOTSTRAP="$HOME/.config/fish/conf.d/spec_fab.fish"
-    echo "🔗 Linking SpecFab to Fish via $SPEC_FAB_BOOTSTRAP..."
+    echo "🔗 Linking spec-fab to Fish via $SPEC_FAB_BOOTSTRAP..."
 
     cat << 'EOF' > "$SPEC_FAB_BOOTSTRAP"
-# SpecFab Auto-generated Bootstrap
+# spec-fab Auto-generated Bootstrap
 set -l spec_fab_root "$HOME/.specfab"
 
 # 1. Auto-load private bin to PATH (allows fabric to be called directly)
@@ -426,7 +426,7 @@ EOF
 
      # 5. setup fabric interaction
     setup_fabric_interaction
-    echo "🎯 Linking SpecFab patterns to Fabric..."
+    echo "🎯 Linking spec-fab patterns to Fabric..."
     
     FABRIC_CONFIG_DIR="$HOME/.config/fabric"
     ENV_FILE="$FABRIC_CONFIG_DIR/.env"
@@ -445,7 +445,7 @@ EOF
 
     echo ""
     echo "👏👏👏 STANDING OVATION! 👏👏👏"
-    echo "SpecFab is officially alive and ready for action."
+    echo "spec-fab is officially alive and ready for action."
     echo ""
     echo "If you're not sure how to kick off your first mission, check out the guide here:"
     echo "👉 https://github.com/stephen9412/spec-fab/blob/main/README.md"
