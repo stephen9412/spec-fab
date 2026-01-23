@@ -9,12 +9,9 @@
 </div>
 <br>
 
-> **Conflict-Driven Architecture for the AI Era**
-> 
 > 🛑 **Stop chatting. Start merging.**
-> Quit the casual chats with AI. It's time to merge its decisions.
 > 
-> spec-fab forces LLM integration directly into your Unix pipeline, treating **architectural decisions** as **Git merge conflicts**—requiring you, the human, to resolve them.
+> Forces LLM integration directly into your Unix pipeline, treating **architectural decisions** as **Git merge conflicts**—requiring you, the human, to resolve them.
 > 
 > ---
 > ⭐️ **GitHub newbie here. Your Star gives me enough motivation to skip dinner and code for 2 more hours.**
@@ -44,18 +41,6 @@ spec_plan
 
 ```
 
-## 🎭 Origin Story: A Lesson in Irony
-
-> **"This is exactly why this project exists."**
-
-Ironically, when I was first developing SpecFab, I tried to use the "ultimate stack"—**OpenCode + Claude 3.7 Sonnet**—to run **Spec-kit**'s official commands, just to generate a basic template for cross-validation.
-
-The result? That "high-tech" combo kept erroring out, leaving me staring at my screen, **questioning my life choices.**
-
-That was my epiphany: **We shouldn't be wrestling with TUIs or debugging complex dependency trees just to capture a flash of inspiration.** We need tools that are simpler, more brutal, and won't betray us.
-
-And so, `spec-fab` was born.
-
 ---
 
 ## Why Choose spec-fab?
@@ -76,6 +61,21 @@ We kept only the essentials:
 * **🧠 AI Native**: Powered by [Fabric](https://github.com/danielmiessler/Fabric) for architectural brainstorming and review.
 * **📄 Pure Markdown**: Your documentation is plain text. No hidden databases, no black magic.
 * **🤝 Spec-Kit Compatible**: We adopt the best practices and prompt logic from GitHub's official [spec-kit](https://github.com/github/spec-kit), but implemented for the command line.
+
+
+---
+
+## 🎭 Origin Story: A Lesson in Irony
+
+> **"This is exactly why this project exists."**
+
+Ironically, when I was first developing SpecFab, I tried to use the "ultimate stack"—**OpenCode + Claude 3.7 Sonnet**—to run **Spec-kit**'s official commands, just to generate a basic template for cross-validation.
+
+The result? That "high-tech" combo kept erroring out, leaving me staring at my screen, **questioning my life choices.**
+
+That was my epiphany: **We shouldn't be wrestling with TUIs or debugging complex dependency trees just to capture a flash of inspiration.** We need tools that are simpler, more brutal, and won't betray us.
+
+And so, `spec-fab` was born.
 
 ---
 
