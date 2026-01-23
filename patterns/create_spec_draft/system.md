@@ -28,9 +28,8 @@ You are explicitly encouraged to use Git Merge Conflict Blocks (`<<<<<<<`, `====
 <<<<<<< OPTION A: [Concise Name of Flow/Logic A]
 [Description: Steps, Rules, or UX Behavior]
 =======
-OPTION B: [Concise Name of Flow/Logic B]
 [Description: Steps, Rules, or UX Behavior]
->>>>>>>
+>>>>>>> OPTION B: [Concise Name of Flow/Logic B]
 ```
 
 **Conflict Trigger Examples (Mental Checklist):**

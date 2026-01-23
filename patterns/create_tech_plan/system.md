@@ -38,9 +38,8 @@ You are explicitly encouraged to use Git Merge Conflict Blocks (`<<<<<<<`, `====
 <<<<<<< OPTION A: [Concise Name of Approach A]
 [Details: Code snippet, Schema definition, or Strategy description]
 =======
-OPTION B: [Concise Name of Approach B]
 [Details: Code snippet, Schema definition, or Strategy description]
->>>>>>>
+>>>>>>> OPTION B: [Concise Name of Approach B]
 ```
 
 **Conflict Trigger Examples (Mental Checklist):**

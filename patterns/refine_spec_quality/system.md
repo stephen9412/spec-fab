@@ -34,9 +34,8 @@ A draft markdown specification (which may already contain Git Conflict blocks).
   <<<<<<< OPTION A: Manual Approval (Strict)
   The admin must manually review and approve the new user account before they can log in.
   =======
-  OPTION B: Auto-Approval with Flagging (Growth)
   The system automatically approves the user but flags suspicious domains for post-registration review.
-  >>>>>>>
+  >>>>>>> OPTION B: Auto-Approval with Flagging (Growth)
 
 # OUTPUT
 The refined, clean markdown specification. NOTHING ELSE.
