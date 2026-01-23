@@ -1,5 +1,50 @@
 #!/bin/sh
 
+# ==============================================================================
+# 🚀 SpecFab Bootstrap Loader
+# ==============================================================================
+# If piped execution (curl | sh) is detected, we must download it as a physical file
+# and re-execute it so that commands like sudo, read, and fabric can correctly read keyboard input.
+# ==============================================================================
+if [ ! -t 0 ]; then
+    echo "🔄 Detected piped execution (curl | sh)."
+    echo "📥 Downloading script to temporary file to enable full interactivity..."
+    
+    # Define script source (ensure this URL points to your main branch)
+    # Note: Added a random parameter here to bypass GitHub CDN cache
+    REMOTE_URL="https://raw.githubusercontent.com/stephen9412/spec-fab/main/install.sh?t=$(date +%s)"
+    TEMP_SCRIPT="/tmp/spec_fab_install_$(date +%s).sh"
+    
+    # Select download tool
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL "$REMOTE_URL" -o "$TEMP_SCRIPT"
+    elif command -v wget >/dev/null 2>&1; then
+        wget -qO "$TEMP_SCRIPT" "$REMOTE_URL"
+    else
+        echo "❌ Error: Need curl or wget to proceed."
+        exit 1
+    fi
+    
+    # Grant permissions
+    chmod +x "$TEMP_SCRIPT"
+    
+    # [CRITICAL] Re-execute the script
+    # 1. "$@" : Pass along original arguments (e.g., --help)
+    # 2. < /dev/tty : Double insurance, forcing the new script's input to bind to the terminal
+    sh "$TEMP_SCRIPT" "$@" < /dev/tty
+    
+    # Capture the exit status code of the child process
+    EXIT_CODE=$?
+    
+    # Clean up and exit parent process
+    rm -f "$TEMP_SCRIPT"
+    exit $EXIT_CODE
+fi
+# ==============================================================================
+# End of Bootstrap Loader (Main logic starts below)
+# ==============================================================================
+
+
 root_warning() {
     # Check if running as root (uid 0)
     if [ "$(id -u)" -eq 0 ]; then
