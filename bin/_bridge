@@ -1,0 +1,6 @@
+#!/bin/sh
+HERE="$(cd "$(dirname "$0")" && pwd)"
+REPO_ROOT="$(dirname "$HERE")"
+FUNC_DIR="$REPO_ROOT/fish/functions"
+CMD_NAME="$(basename "$0")"
+exec fish -c "set -p fish_function_path '$FUNC_DIR'; $CMD_NAME \$argv" -- "$@"
