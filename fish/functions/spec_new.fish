@@ -1,5 +1,16 @@
 function spec_new --description "Create a new Feature Spec (SpecFab Flow)"
     # ------------------------------------------------------------------
+    # 0. Pre-flight Check: Git Environment
+    # ------------------------------------------------------------------
+    # Check if inside a Git working directory. If not, git rev-parse returns a non-zero value.
+    if not git rev-parse --is-inside-work-tree > /dev/null 2>&1
+        echo "❌ Error: Not a git repository."
+        echo "   spec-fab relies on Git branches to manage features."
+        echo "💡 Tip: Run 'spec_init' to initialize the environment, or run 'git init' manually."
+        return 1
+    end
+
+    # ------------------------------------------------------------------
     # 1. Smart Input Handling (Pipe or Arguments)
     # ------------------------------------------------------------------
     set -l feature_desc ""

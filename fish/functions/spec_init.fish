@@ -22,11 +22,15 @@
 # SOFTWARE.
 
 function spec_init --description "Initialize .specify directory structure, constitution, and spec templates"
-    # 1. Create directory structure (mkdir -p is idempotent; repeated execution will not report errors)
+    echo "🔮 Initializing SpecFab environment..."
+
+    # --------------------------------------------------------
+    # 1. Create directory structure & Files
+    # --------------------------------------------------------
     mkdir -p .specify/{memory,scripts,templates}
     
     # --------------------------------------------------------
-    # Initialize Constitution
+    # 2. Initialize Constitution
     # --------------------------------------------------------
     set -l const_file ".specify/memory/constitution.md"
     if test -f "$const_file"
@@ -38,7 +42,7 @@ function spec_init --description "Initialize .specify directory structure, const
     end
 
     # --------------------------------------------------------
-    # Initialize Spec Template
+    # 3. Initialize Spec Template
     # --------------------------------------------------------
     set -l spec_template ".specify/templates/spec-template.md"
     if test -f "$spec_template"
@@ -50,7 +54,7 @@ function spec_init --description "Initialize .specify directory structure, const
     end
 
     # --------------------------------------------------------
-    # Initialize Plan Template
+    # 4. Initialize Plan Template
     # --------------------------------------------------------
     set -l plan_template ".specify/templates/plan-template.md"
     if test -f "$plan_template"
@@ -59,6 +63,33 @@ function spec_init --description "Initialize .specify directory structure, const
     else
         _generate_plan_template > "$plan_template"
         echo "✅ Created Plan Template: $plan_template"
+    end
+
+    # --------------------------------------------------------
+    # 99. Git Operations
+    # --------------------------------------------------------
+    echo ""
+    echo "💾 Checking Version Control Status..."
+
+    if git rev-parse --is-inside-work-tree > /dev/null 2>&1
+        echo "✅ Existing Git repository detected."
+        echo "✋ We respect your workflow. No changes were committed automatically."
+        echo ""
+        echo "👉 Recommended Action:"
+        echo "   git add .specify"
+        echo "   git commit -m \"chore: initialize SpecFab environment\""
+    else
+        echo "⚙️  Git repository not found. Initializing..."
+        git init
+        echo "✅ Git repository initialized."
+        
+        echo "💾 Performing root commit for new project..."
+        git add .specify
+        if git commit -m "chore: initialize SpecFab environment" > /dev/null 2>&1
+            echo "✅ Created standard initialization commit."
+        else
+            echo "⚠️  Commit failed (maybe configure git user.email first?)."
+        end
     end
 
     # --------------------------------------------------------
