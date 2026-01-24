@@ -41,7 +41,6 @@ echo "Build a Tinder-like app for adopting cats" | spec_new
 spec_plan
 # 💥 架構衝突！AI 針對實作細節提供了不同方案 (Options)，請打開 plan.md 選擇你的戰術。
 ```
-
 ---
 
 ## 為什麼選擇 spec-fab
@@ -157,6 +156,17 @@ spec_plan
 #    Please open the file and resolve the merge conflicts.
 #    (這就是我們要的：你自己決定架構，而不是讓 AI 瞎掰)
 ```
+
+## 🚧 近期上線 (Roadmap)
+
+spec-fab 的旅程才剛開始。我們正致力於補完從「架構決策」到「落地執行」的最後拼圖：
+
+| 指令 |
+| :--- |
+| **`spec_task`** |
+| **`spec_checklist`** |
+| **`spec_summarize_spec`** |
+| **`spec_summarize_plan`** | 
 
 ## 貢獻
 

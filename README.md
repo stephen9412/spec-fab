@@ -40,7 +40,6 @@ echo "Build a Tinder-like app for adopting cats" | spec_new
 # 5. Architecting
 spec_plan
 # 💥 Architecture Conflicts! AI provided different implementation strategies. Open plan.md to pick your tactics.
-
 ```
 
 ---
@@ -87,7 +86,6 @@ One command. Upgrade your Terminal to an architect's arsenal in 30 seconds.
 
 ```bash
 curl -sLf https://raw.githubusercontent.com/stephen9412/spec-fab/refs/heads/main/install.sh | sh
-
 ```
 
 ### 🧹 Uninstallation (The "Clean Break" Promise)
@@ -121,7 +119,6 @@ spec_init
 # ✅ Created Spec Template: .specify/templates/spec-template.md
 # ...
 # 🚀 spec-fab environment ready.
-
 ```
 
 ### 2. Set Principles (`spec_constitution`)
@@ -134,7 +131,6 @@ cat draft.md | spec_constitution
 
 # Argument mode: Issue a supreme directive
 spec_constitution "Create principles focused on code quality, testing standards, and Rust idioms."
-
 ```
 
 ### 3. Create Spec (`spec_new`)
@@ -149,7 +145,6 @@ cat prd.md | spec_new
 # 🏗  Drafting Specification...
 # 🔍 Refining Spec quality...
 # ✅ Spec Created at: specs/1-build-faceswap-pipeline/spec.md
-
 ```
 
 ### 4. Generate Plan (`spec_plan`)
@@ -163,8 +158,18 @@ spec_plan
 # 💥 CONFLICTS DETECTED! The Architect presented options.
 #    Please open the file and resolve the merge conflicts.
 #    (You decide the architecture. Don't let AI hallucinate your system.)
-
 ```
+
+## 🚧 Roadmap
+
+The journey of SpecFab has just begun. We are working on the final pieces to bridge the gap from "Decision" to "Execution":
+
+| Command |
+| :--- |
+| **`spec_task`** |
+| **`spec_checklist`** |
+| **`spec_summarize_spec`** |
+| **`spec_summarize_plan`** |
 
 ## Contributing
 
